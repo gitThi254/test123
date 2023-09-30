@@ -4,10 +4,9 @@ import Image from "next/image";
 import mongoose from "mongoose";
 
 export default function Home() {
-  const id = mongoose.connection.readyState;
   return (
     <main className=''>
-      {id}
+      {process.env.MONGOURI ? <div> connected</div> : <div>dis connected</div>}
       <AddTodo />
       <TodoList />
     </main>
