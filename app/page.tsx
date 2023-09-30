@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 export default function Home() {
   return (
     <main className=''>
-      {process.env.MONGOURI ? <div> connected</div> : <div>dis connected</div>}
+      {process.env.MONGOURI}
       <AddTodo />
       <TodoList />
     </main>
