@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  if (mongoose.connection.readyState != 1) {
+  if (!mongoose.connections[0].readyState) {
     await mongoose
       .connect(process.env.MONGOURI!)
       .then(() => {
